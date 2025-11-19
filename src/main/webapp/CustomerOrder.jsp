@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
-<!-- Write your name and matric number here -->
+<!-- AUSTIN SEE YONG HUI A23CS5015 -->
 
 <head>
   <title>Customer Order</title>
@@ -40,7 +40,7 @@
 
 <body>
   <div class="container">
-    <form action="pls_complete" method="pls_complete">
+    <form action="OrderServlet" method="post">
       <h3>MyCafe</h3>
       <h5>Complete Your Order</h5>
 
@@ -97,8 +97,9 @@
   </tr>
   </table>
 
-  <input class="btn" type="submit" value="Order" name="orderBtn" />
+  <input class="btn" type="submit" value="Order" name="orderBtn" /> 
   <input class="btn" type="reset" value="Reset" name="resetBtn" />
+
   <br>
   </form>
   </div>

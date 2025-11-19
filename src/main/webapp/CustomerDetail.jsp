@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Write your name and matric number here -->
+<!-- AUSTIN SEE YONG HUI A23CS5015 -->
 
 <meta charset="ISO-8859-1">
 <head>
@@ -34,7 +34,7 @@
     <div class="container-fluid">
         <h3>MyCafe </h3>
 
-        <form method="pls_complete" action="pls_complete">
+        <form method="post" action="CustomerJavaServlet">
             <div class="col-lg-4">
                 <h4>Customer Detail</h4>
                 <div class="form-group>">
@@ -57,7 +57,6 @@
                         <input name="membership" type="radio" value="no" />No
                     <br><br><br>
                 </div>
-
 
                 <input class="btn " type="submit" value="Proceed">
                 <input class="btn " type="reset" value="Reset">
