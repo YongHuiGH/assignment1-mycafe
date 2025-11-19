@@ -6,7 +6,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Cust Payment</title>
-...
 </head>
 <body>
 <div class="container-fluid">
@@ -26,11 +25,52 @@
             <p>Membership: <%= customer.getMembership() %></p>
 
             <h5>Order Information</h5>
-            <p>Set 1 Selected: <%= order.isSet1() %>, Drink: <%= order.getDrink1() %>, Quantity: <%= order.getSet1Quantity() %></p>
-            <p>Set 2 Selected: <%= order.isSet2() %>, Drink: <%= order.getDrink2() %>, Quantity: <%= order.getSet2Quantity() %></p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Set</th>
+                        <th>Selected</th>
+                        <th>Drink</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (order.isSet1()) { %>
+                    <tr>
+                        <td>Set 1 (Hashbrown)</td>
+                        <td>Yes</td>
+                        <td><%= order.getDrink1() %></td>
+                        <td><%= order.getSet1Quantity() %></td>
+                    </tr>
+                    <% } %>
 
-            <p>Total Amount: $<%= order.calculateTotal() %></p>
-            <p>Final Amount (after discount): $<%= order.calculateFinalAmount(customer) %></p>
+                    <% if (order.isSet2()) { %>
+                    <tr>
+                        <td>Set 2 (Hot Pancakes)</td>
+                        <td>Yes</td>
+                        <td><%= order.getDrink2() %></td>
+                        <td><%= order.getSet2Quantity() %></td>
+                    </tr>
+                    <% } %>
+
+                    <% if (!order.isSet1() && !order.isSet2()) { %>
+                    <tr>
+                        <td colspan="4" style="text-align:center;">No sets selected.</td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+
+            <table class="table table-bordered">
+                <tr>
+                    <td><strong>Total Amount:</strong></td>
+                    <td>$<%= String.format("%.2f", order.calculateTotal()) %></td>
+                </tr>
+                <tr>
+                    <td><strong>Final Amount (after discount):</strong></td>
+                    <td>$<%= String.format("%.2f", order.calculateFinalAmount(customer)) %></td>
+                </tr>
+            </table>
         <%
             } else {
         %>

@@ -1,4 +1,5 @@
 controller\OrderServlet.class
+controller\CustomerPaymentServlet.class
 model\Customer.class
 controller\CustomerJavaServlet.class
 model\Order.class
